@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="EL ORIGEN: Cuatro Estaciones — Membresía de Bienestar Regenerativo para profesionales que necesitan restaurar su vitalidad. Arte, naturaleza y psicología. Simoné."/>
+<title>EL ORIGEN · Cuatro Estaciones · Simoné</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --negro:       #0d0f0b;
+  --bosque:      #111a0c;
+  --tierra:      #1e1208;
+  --verde:       #2a4a18;
+  --verde-med:   #4a7c2e;
+  --verde-oliva: #6a8c40;
+  --sage:        #8fa870;
+  --sage-cl:     #c8d8b0;
+  --crema:       #f2ede0;
+  --crema-osc:   #e5dcc8;
+  --oro:         #c8a84b;
+  --oro-cl:      #e8d090;
+  --cobre:       #9a6030;
+  --texto:       #2a2010;
+  --texto-suave: #5a5040;
+  --blanco:      #ffffff;
+  --wa:          #25d366;
+  --radio:       4px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--crema); color: var(--texto); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ─── UTILIDADES ─── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+.oro { color: var(--oro); }
+.tag {
+  display: inline-block;
+  border: 1px solid var(--oro);
+  color: var(--oro);
+  font-size: .68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px;
+  padding: 5px 14px; border-radius: 2px;
+  margin-bottom: 18px;
+}
+.tag-dark {
+  display: inline-block;
+  border: 1px solid rgba(200,168,75,.4);
+  color: var(--oro-cl);
+  font-size: .68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px;
+  padding: 5px 14px; border-radius: 2px;
+  margin-bottom: 18px;
+}
+.divider {
+  width: 60px; height: 1px;
+  background: var(--oro);
+  margin: 20px 0;
+}
+.divider-center { margin: 20px auto; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100; padding: 0 28px;
+  transition: all .4s ease;
+}
+nav.scrolled {
+  background: rgba(13,15,11,.95);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(200,168,75,.2);
+}
+.nav-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0;
+  transition: padding .3s;
+}
+nav.scrolled .nav-inner { padding: 14px 0; }
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--crema); letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.nav-logo span { color: var(--oro); font-size: .75rem; display: block; letter-spacing: 2px; font-weight: 300; margin-top: -2px; }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a { color: rgba(242,237,224,.7); font-size: .8rem; letter-spacing: .8px; transition: color .2s; text-transform: uppercase; }
+.nav-links a:hover { color: var(--oro); }
+.nav-wa {
+  color: var(--blanco) !important;
+  background: var(--wa);
+  padding: 7px 16px !important;
+  border-radius: 2px;
+  letter-spacing: .5px !important;
+}
+.nav-wa:hover { background: #1ea355 !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 22px; height: 1px; background: var(--crema); transition: .3s; }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(42,74,24,.6) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(30,18,8,.8) 0%, transparent 50%),
+    linear-gradient(175deg, #0d0f0b 0%, #1a2810 35%, #111a0c 65%, #0d0f0b 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: 80px; position: relative; overflow: hidden;
+}
+.hero-particles {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.particle {
+  position: absolute; border-radius: 50%;
+  background: var(--oro); opacity: 0;
+  animation: particleFall linear infinite;
+}
+@keyframes particleFall {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: .4; }
+  90% { opacity: .2; }
+  100% { opacity: 0; transform: translateY(100vh); }
+}
+.hero-body {
+  position: relative; z-index: 2;
+  padding: 100px 0 80px;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow .line { width: 40px; height: 1px; background: var(--oro); }
+.hero-eyebrow span {
+  font-size: .7rem; font-weight: 600;
+  color: var(--oro); letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 300; color: var(--crema);
+  line-height: 1.05; margin-bottom: 6px;
+  letter-spacing: -1px;
+}
+.hero-title strong { font-weight: 700; color: var(--oro); display: block; }
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 300; font-style: italic;
+  color: rgba(242,237,224,.65);
+  margin-bottom: 32px; letter-spacing: 1px;
+}
+.hero-concept {
+  font-size: .82rem; color: rgba(242,237,224,.55);
+  text-transform: uppercase; letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+.hero-desc {
+  max-width: 560px;
+  font-size: .97rem; color: rgba(242,237,224,.75);
+  line-height: 1.85; margin-bottom: 48px;
+  font-weight: 300;
+}
+.hero-desc em { color: var(--oro); font-style: normal; font-weight: 500; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+.btn-oro {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--oro); color: var(--negro);
+  font-weight: 700; font-size: .82rem; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 16px 32px; border-radius: 2px; border: none; cursor: pointer;
+  transition: all .25s; box-shadow: 0 4px 20px rgba(200,168,75,.3);
+}
+.btn-oro:hover { background: var(--oro-cl); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,168,75,.45); }
+.btn-ghost-oro {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--oro);
+  font-weight: 600; font-size: .82rem; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px 28px; border-radius: 2px;
+  border: 1px solid var(--oro); cursor: pointer;
+  transition: all .25s;
+}
+.btn-ghost-oro:hover { background: rgba(200,168,75,.1); transform: translateY(-2px); }
+
+/* Estaciones preview en hero */
+.hero-seasons {
+  display: flex; gap: 0;
+  border-top: 1px solid rgba(200,168,75,.2);
+  padding-top: 36px;
+}
+.season-preview {
+  flex: 1; padding: 18px 20px;
+  border-right: 1px solid rgba(200,168,75,.12);
+  transition: all .25s;
+}
+.season-preview:last-child { border-right: none; }
+.season-preview:hover { background: rgba(200,168,75,.05); }
+.sp-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: rgba(200,168,75,.3); line-height: 1; margin-bottom: 4px; }
+.sp-name { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--oro); margin-bottom: 4px; }
+.sp-desc { font-size: .75rem; color: rgba(242,237,224,.45); line-height: 1.4; }
+
+/* ─── MANIFIESTO ─── */
+#manifiesto {
+  background: var(--crema);
+  padding: 100px 0;
+}
+.manifiesto-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.manif-left { position: sticky; top: 100px; }
+.manif-label {
+  writing-mode: vertical-rl; text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; font-weight: 300;
+  color: rgba(42,74,24,.08); line-height: 1;
+  user-select: none;
+}
+.manif-right { }
+.manif-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400;
+  color: var(--texto-suave); line-height: 1.9;
+  margin-bottom: 24px;
+}
+.manif-text em { font-style: italic; color: var(--verde); }
+.manif-text strong { font-weight: 600; color: var(--texto); }
+.manif-highlight {
+  border-left: 3px solid var(--oro);
+  padding: 20px 24px;
+  background: rgba(200,168,75,.05);
+  margin: 32px 0;
+}
+.manif-highlight p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-style: italic; font-weight: 300;
+  color: var(--texto); line-height: 1.65;
+}
+.manif-cierre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 600;
+  color: var(--verde); text-align: right;
+  margin-top: 32px; font-style: italic;
+}
+
+/* ─── ARQUETIPOS ─── */
+#arquetipos {
+  background: var(--bosque);
+  padding: 100px 0;
+}
+.arq-intro { text-align: center; margin-bottom: 60px; }
+.arq-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300; color: var(--crema);
+  margin-bottom: 12px; line-height: 1.2;
+}
+.arq-intro p { font-size: .9rem; color: rgba(242,237,224,.55); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+.arq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(200,168,75,.15); }
+.arq-card {
+  background: var(--bosque);
+  padding: 40px 32px;
+  transition: background .3s;
+  position: relative; overflow: hidden;
+}
+.arq-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--oro);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s ease;
+}
+.arq-card:hover { background: rgba(200,168,75,.04); }
+.arq-card:hover::before { transform: scaleX(1); }
+.arq-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; font-weight: 300;
+  color: rgba(200,168,75,.12); line-height: 1;
+  margin-bottom: 16px;
+}
+.arq-title {
+  font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--oro); margin-bottom: 8px;
+}
+.arq-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600;
+  color: var(--crema); margin-bottom: 4px; line-height: 1.2;
+}
+.arq-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic;
+  color: rgba(242,237,224,.5); margin-bottom: 20px;
+}
+.arq-pain { font-size: .82rem; color: rgba(242,237,224,.65); line-height: 1.7; margin-bottom: 20px; }
+.arq-frase {
+  border-top: 1px solid rgba(200,168,75,.2);
+  padding-top: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic;
+  color: var(--oro-cl); line-height: 1.6;
+}
+
+/* ─── ESTACIONES ─── */
+#estaciones {
+  background: var(--crema);
+  padding: 100px 0;
+}
+.est-intro { margin-bottom: 72px; }
+.est-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300; color: var(--texto);
+  line-height: 1.2; margin-bottom: 10px;
+}
+.est-intro p { font-size: .9rem; color: var(--texto-suave); max-width: 480px; line-height: 1.7; }
+.estacion {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 0; margin-bottom: 2px;
+  border: 1px solid var(--crema-osc);
+  overflow: hidden; transition: all .3s;
+  background: #fff;
+}
+.estacion:hover { border-color: var(--oro); box-shadow: 0 8px 32px rgba(200,168,75,.1); }
+.est-num-col {
+  background: var(--verde);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 32px 0;
+  position: relative; overflow: hidden;
+  transition: background .3s;
+}
+.estacion:nth-child(2) .est-num-col { background: #2a3a20; }
+.estacion:nth-child(3) .est-num-col { background: #3a2a18; }
+.estacion:nth-child(4) .est-num-col { background: #1a2a3a; }
+.estacion:hover .est-num-col { background: var(--oro); }
+.est-num-col .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 700;
+  color: rgba(255,255,255,.3); line-height: 1;
+  transition: color .3s;
+}
+.estacion:hover .est-num-col .num { color: var(--negro); }
+.est-body { padding: 32px 36px; display: flex; gap: 40px; align-items: flex-start; }
+.est-main { flex: 2; }
+.est-lateral { flex: 1; }
+.est-tag { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); margin-bottom: 6px; }
+.est-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 600;
+  color: var(--texto); margin-bottom: 4px; line-height: 1.1;
+}
+.est-enfoque { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--texto-suave); margin-bottom: 14px; }
+.est-desc { font-size: .9rem; color: var(--texto-suave); line-height: 1.75; margin-bottom: 16px; }
+.est-revelacion {
+  background: linear-gradient(135deg, rgba(200,168,75,.08), rgba(200,168,75,.04));
+  border-left: 2px solid var(--oro);
+  padding: 12px 16px;
+}
+.est-revelacion .rev-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--oro); margin-bottom: 4px; }
+.est-revelacion p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--texto); line-height: 1.5; }
+.est-meta { display: flex; flex-direction: column; gap: 12px; }
+.est-meta-item { }
+.est-meta-item .emi-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--texto-suave); margin-bottom: 3px; }
+.est-meta-item .emi-val { font-size: .85rem; color: var(--texto); line-height: 1.4; }
+.est-icon { font-size: 2rem; margin-bottom: 10px; }
+
+/* ─── DOLORES ─── */
+#dolores {
+  background: linear-gradient(170deg, var(--tierra) 0%, var(--bosque) 50%, var(--verde) 100%);
+  padding: 100px 0;
+}
+.dolores-intro { text-align: center; margin-bottom: 60px; }
+.dolores-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--crema);
+  margin-bottom: 10px; line-height: 1.25;
+}
+.dolores-intro p { font-size: .88rem; color: rgba(242,237,224,.55); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+.dolores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.dolor-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(200,168,75,.12);
+  padding: 36px 32px;
+  transition: all .3s;
+}
+.dolor-card:hover { background: rgba(255,255,255,.07); border-color: rgba(200,168,75,.3); }
+.dolor-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(200,168,75,.2); line-height: 1; margin-bottom: 12px; }
+.dolor-problema { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(200,168,75,.6); margin-bottom: 6px; }
+.dolor-titulo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--crema); margin-bottom: 16px; line-height: 1.2; }
+.dolor-insight { font-size: .87rem; color: rgba(242,237,224,.7); line-height: 1.75; font-style: italic; }
+.dolor-insight strong { color: var(--oro); font-style: normal; }
+
+/* ─── PROMESAS ─── */
+#promesas {
+  background: var(--crema);
+  padding: 100px 0;
+}
+.promesas-intro { text-align: center; margin-bottom: 60px; }
+.promesas-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--texto); margin-bottom: 10px;
+}
+.promesas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.promesa-card {
+  background: var(--blanco);
+  border: 1px solid var(--crema-osc);
+  padding: 32px 28px;
+  transition: all .3s;
+  position: relative; overflow: hidden;
+}
+.promesa-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--oro);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s;
+}
+.promesa-card:hover { box-shadow: 0 8px 28px rgba(200,168,75,.12); }
+.promesa-card:hover::after { transform: scaleX(1); }
+.promesa-para { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--oro); margin-bottom: 10px; }
+.promesa-txt { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-style: italic; color: var(--texto-suave); line-height: 1.8; }
+.promesa-txt strong { font-style: normal; color: var(--verde); font-weight: 600; }
+
+/* ─── INVERSIÓN ─── */
+#inversion {
+  background: var(--bosque);
+  padding: 100px 0;
+}
+.inv-intro { text-align: center; margin-bottom: 56px; }
+.inv-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--crema); margin-bottom: 10px;
+}
+.inv-intro p { font-size: .88rem; color: rgba(242,237,224,.5); max-width: 440px; margin: 0 auto; line-height: 1.7; }
+.inv-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1px; background: rgba(200,168,75,.15); margin-bottom: 48px; }
+.inv-card {
+  background: var(--bosque);
+  padding: 36px 28px;
+  text-align: center;
+  transition: background .3s;
+}
+.inv-card:hover { background: rgba(200,168,75,.05); }
+.inv-card.featured {
+  background: linear-gradient(145deg, rgba(200,168,75,.1), rgba(200,168,75,.03));
+  border: 1px solid rgba(200,168,75,.3);
+}
+.inv-featured-tag {
+  display: inline-block;
+  background: var(--oro); color: var(--negro);
+  font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 3px 10px; border-radius: 2px;
+  margin-bottom: 16px;
+}
+.inv-type { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(242,237,224,.5); margin-bottom: 10px; }
+.inv-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--crema); margin-bottom: 6px; line-height: 1.2; }
+.inv-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 700; color: var(--oro);
+  line-height: 1; margin: 16px 0 4px;
+}
+.inv-currency { font-size: .75rem; color: rgba(242,237,224,.4); margin-bottom: 16px; }
+.inv-includes { font-size: .8rem; color: rgba(242,237,224,.6); line-height: 1.7; }
+.inv-includes li { list-style: none; padding: 4px 0; border-bottom: 1px solid rgba(200,168,75,.1); }
+.inv-includes li:last-child { border-bottom: none; }
+.inv-includes li::before { content: '✦ '; color: var(--oro); font-size: .6rem; }
+
+/* Aliados */
+.inv-aliados {
+  background: rgba(200,168,75,.06);
+  border: 1px solid rgba(200,168,75,.2);
+  padding: 28px 32px;
+  display: flex; align-items: center; gap: 32px;
+  flex-wrap: wrap;
+}
+.inv-aliados .al-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); flex-shrink: 0; }
+.inv-aliados .al-tags { display: flex; gap: 10px; flex-wrap: wrap; flex: 1; }
+.inv-aliados .al-tag {
+  background: rgba(200,168,75,.1); border: 1px solid rgba(200,168,75,.3);
+  color: var(--oro-cl); font-size: .78rem;
+  padding: 5px 14px; border-radius: 2px;
+}
+.inv-aliados .al-precio { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--oro); flex-shrink: 0; }
+.inv-aliados .al-detalle { font-size: .72rem; color: rgba(242,237,224,.45); }
+
+/* Pagos */
+.inv-pagos {
+  margin-top: 24px; text-align: center;
+}
+.inv-pagos p { font-size: .8rem; color: rgba(242,237,224,.5); margin-bottom: 12px; }
+.pagos-pills { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.pago-pill {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  color: rgba(242,237,224,.7); font-size: .75rem;
+  padding: 5px 14px; border-radius: 2px;
+}
+
+/* ─── STATS ─── */
+#stats {
+  background: var(--crema-osc);
+  padding: 60px 0;
+  border-top: 1px solid var(--crema-osc);
+}
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.stat-item {
+  text-align: center; padding: 32px;
+  border-right: 1px solid rgba(42,74,24,.1);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--verde); line-height: 1; margin-bottom: 6px; }
+.stat-label { font-size: .75rem; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; }
+
+/* ─── CONTACTO ─── */
+#contacto {
+  background: var(--crema);
+  padding: 100px 0;
+}
+.contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contacto-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300; color: var(--texto);
+  margin-bottom: 8px; line-height: 1.2;
+}
+.contacto-left .cl-sub { font-size: .9rem; color: var(--texto-suave); line-height: 1.75; margin-bottom: 32px; max-width: 420px; }
+.cupos-alert {
+  background: rgba(200,168,75,.08); border: 1px solid var(--oro);
+  padding: 16px 20px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.cupos-alert .ca-icon { font-size: 1.1rem; flex-shrink: 0; }
+.cupos-alert p { font-size: .82rem; color: var(--texto); line-height: 1.5; }
+.cupos-alert strong { color: var(--cobre); }
+.horario-box { padding: 20px 0; border-top: 1px solid var(--crema-osc); border-bottom: 1px solid var(--crema-osc); margin-bottom: 24px; }
+.hb-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+.hb-row:last-child { margin-bottom: 0; }
+.hb-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--oro); margin-top: 6px; flex-shrink: 0; }
+.hb-text strong { font-size: .82rem; color: var(--texto); display: block; }
+.hb-text span { font-size: .77rem; color: var(--texto-suave); }
+.contacto-form {
+  background: var(--bosque);
+  padding: 40px 36px;
+}
+.cf-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--crema); margin-bottom: 4px;
+}
+.cf-sub { font-size: .78rem; color: rgba(242,237,224,.5); margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: .68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  color: rgba(242,237,224,.5); margin-bottom: 7px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(200,168,75,.2);
+  border-radius: 2px; color: var(--crema);
+  font-size: .88rem; font-family: inherit; outline: none;
+  transition: border-color .2s, background .2s;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(242,237,224,.25); }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--oro); background: rgba(255,255,255,.08);
+}
+.form-group select option { background: var(--bosque); color: var(--crema); }
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.btn-form-oro {
+  width: 100%; padding: 15px;
+  background: var(--oro); color: var(--negro);
+  border: none; border-radius: 2px; cursor: pointer;
+  font-weight: 700; font-size: .82rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transition: all .25s; margin-top: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-form-oro:hover { background: var(--oro-cl); transform: translateY(-1px); }
+.form-divider { display: flex; align-items: center; gap: 14px; margin: 18px 0; }
+.form-divider::before, .form-divider::after { content: ''; flex: 1; height: 1px; background: rgba(200,168,75,.2); }
+.form-divider span { font-size: .7rem; color: rgba(242,237,224,.3); letter-spacing: 1px; }
+.btn-wa-form {
+  width: 100%; padding: 14px;
+  background: var(--wa); color: #fff;
+  border: none; border-radius: 2px; cursor: pointer;
+  font-weight: 600; font-size: .85rem;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: all .25s; text-decoration: none;
+}
+.btn-wa-form:hover { background: #1ea355; transform: translateY(-1px); }
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success.show { display: block; }
+.form-success .fs-icon { font-size: 2.5rem; margin-bottom: 14px; }
+.form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--oro); margin-bottom: 8px; }
+.form-success p { font-size: .85rem; color: rgba(242,237,224,.65); line-height: 1.6; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--negro);
+  padding: 56px 0 24px;
+  border-top: 1px solid rgba(200,168,75,.15);
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: 3px; color: var(--crema);
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.footer-origen {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .9rem; font-style: italic;
+  color: var(--oro); margin-bottom: 12px; letter-spacing: 1px;
+}
+.footer-tagline { font-size: .78rem; color: rgba(242,237,224,.4); line-height: 1.6; margin-bottom: 20px; font-style: italic; }
+.footer-social { display: flex; gap: 10px; }
+.social-ico {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(200,168,75,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; color: rgba(242,237,224,.6);
+  transition: all .2s; text-decoration: none;
+}
+.social-ico:hover { border-color: var(--oro); color: var(--oro); }
+.footer-col h4 { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--oro); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { font-size: .8rem; color: rgba(242,237,224,.5); transition: color .2s; }
+.footer-col ul li a:hover { color: var(--oro); }
+.footer-bottom {
+  border-top: 1px solid rgba(200,168,75,.1);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom p { font-size: .72rem; color: rgba(242,237,224,.3); }
+.footer-tm { font-size: .7rem; color: rgba(200,168,75,.5); }
+
+/* ─── WA FLOTANTE ─── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+}
+.wa-float a {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--wa); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  transition: all .25s; animation: waPulse 3s ease-in-out infinite;
+}
+.wa-float a:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.55); animation: none; }
+@keyframes waPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+.wa-tooltip {
+  position: absolute; right: 66px; top: 50%; transform: translateY(-50%);
+  background: var(--negro); color: var(--crema);
+  font-size: .75rem; white-space: nowrap;
+  padding: 7px 12px; border: 1px solid rgba(200,168,75,.3);
+  opacity: 0; transition: opacity .3s; pointer-events: none;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* ─── ANIMACIONES ─── */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-left { opacity: 0; transform: translateX(-24px); transition: opacity .8s ease, transform .8s ease; }
+.fade-left.visible { opacity: 1; transform: translateX(0); }
+.fade-right { opacity: 0; transform: translateX(24px); transition: opacity .8s ease, transform .8s ease; }
+.fade-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .manifiesto-grid { grid-template-columns: 1fr; }
+  .manif-left { display: none; }
+  .arq-grid { grid-template-columns: 1fr; }
+  .contacto-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .inv-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-seasons { flex-direction: column; }
+  .season-preview { border-right: none; border-bottom: 1px solid rgba(200,168,75,.12); }
+  .estacion { grid-template-columns: 50px 1fr; }
+  .est-body { flex-direction: column; gap: 20px; padding: 20px; }
+  .dolores-grid { grid-template-columns: 1fr; }
+  .promesas-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .form-grid2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      SIMONÉ
+      <span>El Origen · Cuatro Estaciones</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#estaciones">Las Estaciones</a></li>
+      <li><a href="#arquetipos">¿Para quién?</a></li>
+      <li><a href="#inversion">Inversión</a></li>
+      <li><a href="#contacto">Reservar</a></li>
+      <li><a href="https://wa.me/573217738039?text=Hola%20Simon%C3%A9%20%F0%9F%8C%BF%20Me%20interesa%20EL%20ORIGEN.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="nav-wa">WhatsApp</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="inicio" style="min-height:100vh; background: radial-gradient(ellipse at 30% 40%, rgba(42,74,24,.6) 0%, transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(30,18,8,.8) 0%, transparent 50%), linear-gradient(175deg, #0d0f0b 0%, #1a2810 35%, #111a0c 65%, #0d0f0b 100%); display:flex; flex-direction:column; justify-content:flex-end; padding-top:80px; position:relative; overflow:hidden;">
+  <!-- Partículas micelio -->
+  <div id="particles" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div class="container" style="position:relative;z-index:2; padding-top:80px; padding-bottom:0;">
+    <div class="hero-body">
+      <div class="hero-eyebrow"><div class="line"></div><span>Membresía de Bienestar Regenerativo · Simoné</span></div>
+      <h1 class="hero-title">El Origen<strong>Cuatro Estaciones</strong></h1>
+      <p class="hero-subtitle">"Regresa a ti para decidir mejor."</p>
+      <p class="hero-concept">Arte · Naturaleza · Psicología · Restauración</p>
+      <p class="hero-desc">
+        Una intervención de raíz diseñada para profesionales que necesitan
+        <em>soltar el peso del día a día</em> y retornar a su estado natural de equilibrio.
+        No es un descanso. Es una restauración.
+      </p>
+      <div class="hero-ctas">
+        <a href="#estaciones" class="btn-oro">✦ Recorre las Estaciones</a>
+        <a href="#contacto" class="btn-ghost-oro">Reservar mi cupo</a>
+      </div>
+    </div>
+  </div>
+  <!-- 4 Estaciones preview -->
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="hero-seasons">
+      <div class="season-preview">
+        <div class="sp-num">01</div>
+        <div class="sp-name">Yogarte</div>
+        <div class="sp-desc">El Cuerpo como Raíz · Yoga + Land Art</div>
+      </div>
+      <div class="season-preview">
+        <div class="sp-num">02</div>
+        <div class="sp-name">Khuyai</div>
+        <div class="sp-desc">El Pensamiento Visible · Terapia artística</div>
+      </div>
+      <div class="season-preview">
+        <div class="sp-num">03</div>
+        <div class="sp-name">Brújula Cultural</div>
+        <div class="sp-desc">Curaduría de Sentido · Museo privado</div>
+      </div>
+      <div class="season-preview">
+        <div class="sp-num">04</div>
+        <div class="sp-name">Tinta y Café</div>
+        <div class="sp-desc">Gobernanza del Ser · Círculo literario</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANIFIESTO ══ -->
+<section id="manifiesto">
+  <div class="container">
+    <div class="manifiesto-grid">
+      <div class="manif-left">
+        <div class="manif-label">MANIFIESTO</div>
+      </div>
+      <div class="manif-right fade-up">
+        <div class="tag">El Manifiesto</div>
+        <p class="manif-text">
+          Vivimos en la ciudad de las agendas blindadas y las almas en pausa. Nos hemos vuelto expertos en gestionar indicadores de éxito, mientras dejamos que nuestra propia vitalidad se erosione en el asfalto.
+        </p>
+        <p class="manif-text">
+          A veces, la palabra <em>'estrés'</em> no alcanza a describir el peso. Lo que sientes es una <strong>arquitectura de presiones</strong> silenciosas que necesita ser desmantelada para que tú puedas volver a emerger.
+        </p>
+        <div class="manif-highlight">
+          <p>"<em>La Materia de tus Emociones</em>" no es una actividad suelta; es un santuario itinerante de 4 estaciones diseñado para quienes sostienen el mundo sobre sus hombros. Es el permiso para dejar de ser el 'báculo' de otros y permitir que la tierra, el arte y el silencio te sostengan a ti."</p>
+        </div>
+        <p class="manif-text">
+          Bogotá no se detiene, su ruido es constante, pero tú tienes el poder de habitar tu propio centro. Te invitamos a <strong>EL ORIGEN</strong>: un viaje de 4 sábados donde la psicología, la neuroestética y la naturaleza se encuentran para recalibrar tu pulso natural.
+        </p>
+        <p class="manif-text">
+          Porque para liderar afuera, primero hay que estar <em>profundamente bien adentro</em>.
+        </p>
+        <p class="manif-cierre">Hagamos este viaje más liviano.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARQUETIPOS ══ -->
+<section id="arquetipos">
+  <div class="container">
+    <div class="arq-intro fade-up">
+      <div class="tag-dark">¿Este viaje es para ti?</div>
+      <h2>Los tres arquetipos<br/>de <em style="font-style:italic;color:var(--oro)">El Origen</em></h2>
+      <p>Reconócete en alguno de estos perfiles. Si algo resuena, el camino ya empezó.</p>
+    </div>
+    <div class="arq-grid">
+      <div class="arq-card fade-up">
+        <div class="arq-num">I</div>
+        <div class="arq-title">El Sostenedor de Tensiones</div>
+        <div class="arq-name">El que no tiene<br/>permiso para fallar</div>
+        <div class="arq-sub">Director · Gerente · 38–45 años</div>
+        <p class="arq-pain">La IA eliminó los cargos operativos y ahora gestionas el "caos humano" de lo que queda. Eres un amortiguador emocional. Tu casa es una extensión de la oficina. No juegas con tus hijos porque estás pensando en el feedback del lunes.</p>
+        <div class="arq-frase">"Tú sostienes el peso de los resultados y el de tu equipo. Permite que la montaña y el arte te sostengan a ti por un momento."</div>
+      </div>
+      <div class="arq-card fade-up" style="transition-delay:.1s">
+        <div class="arq-num">II</div>
+        <div class="arq-title">El Arquitecto Solitario</div>
+        <div class="arq-name">El motor que no<br/>sabe cómo apagarse</div>
+        <div class="arq-sub">Fundador · Consultor · 35–50 años</div>
+        <p class="arq-pain">Sufres de "Soledad del Fundador". Sientes que si te enfermas o tomas un sábado, el engranaje se detiene. Tu identidad está secuestrada por tu marca. Tienes dinero, pero no tienes "yo".</p>
+        <div class="arq-frase">"Has construido un imperio, pero ¿cuándo fue la última vez que visitaste tus propios cimientos?"</div>
+      </div>
+      <div class="arq-card fade-up" style="transition-delay:.2s">
+        <div class="arq-num">III</div>
+        <div class="arq-title">El Navegante en Calma Chicha</div>
+        <div class="arq-name">El que llegó,<br/>pero se quedó sin viento</div>
+        <div class="arq-sub">Senior · Socio · Especialista · 50–60 años</div>
+        <p class="arq-pain">Ya tienes el éxito financiero pero sientes "Erosión de Asombro". El trabajo se volvió una repetición técnica de alto nivel. Miedo al estancamiento intelectual. La "chispa" se apagó.</p>
+        <div class="arq-frase">"El éxito no tiene por qué ser monótono. Ven a buscar la profundidad que el estatus no te ha podido dar."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ESTACIONES ══ -->
+<section id="estaciones">
+  <div class="container">
+    <div class="est-intro">
+      <div class="tag">La Ruta Mensual</div>
+      <h2 class="serif fade-left" style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; color:var(--texto); line-height:1.2; margin-bottom:10px;">Cuatro Estaciones<br/>para habitarse</h2>
+      <p class="fade-left" style="transition-delay:.1s; font-size:.9rem; color:var(--texto-suave); max-width:480px; line-height:1.7;">Cada sesión dura 5 horas de inmersión total. Sábados de 9:00 AM a 2:00 PM. Grupos de máximo 10–12 personas.</p>
+    </div>
+
+    <!-- Estación 1 -->
+    <div class="estacion fade-up">
+      <div class="est-num-col"><div class="num">01</div></div>
+      <div class="est-body">
+        <div class="est-main">
+          <div class="est-icon">🏔️</div>
+          <div class="est-tag">Estación 1 · Bienestar Físico y Mental</div>
+          <div class="est-name">Yogarte</div>
+          <div class="est-enfoque">El Cuerpo como Raíz</div>
+          <p class="est-desc">Yoga restaurativo en la Serranía de Bogotá acompañado de la creación de una pieza de Land Art colectiva. La montaña no es solo paisaje — es reajuste biológico y bio-sincronización con tus ritmos naturales.</p>
+          <div class="est-revelacion">
+            <div class="rev-label">La Revelación</div>
+            <p>"Dejar de caminar para llegar, empezar a caminar para estar."</p>
+          </div>
+        </div>
+        <div class="est-lateral">
+          <div class="est-meta">
+            <div class="est-meta-item">
+              <div class="emi-label">Enfoque</div>
+              <div class="emi-val">Yoga restaurativo + Land Art colectivo</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Escenario</div>
+              <div class="emi-val">Serranía de Bogotá</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Qué se libera</div>
+              <div class="emi-val">La presión de los hombros del líder "cuidador"</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Tendencia 2026</div>
+              <div class="emi-val">Bio-sincronización · Lujo del "Off-Grid"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estación 2 -->
+    <div class="estacion fade-up" style="transition-delay:.1s">
+      <div class="est-num-col"><div class="num">02</div></div>
+      <div class="est-body">
+        <div class="est-main">
+          <div class="est-icon">🎨</div>
+          <div class="est-tag">Estación 2 · Creatividad y Autoconocimiento</div>
+          <div class="est-name">Khuyai</div>
+          <div class="est-enfoque">El Pensamiento Visible</div>
+          <p class="est-desc">Taller de terapias artísticas y dibujo en un estudio privado con estética Wabi-Sabi. Usamos el arte para "hacer visible" el ruido mental y transformarlo en trazos. Neuroestética aplicada para limpiar los residuos de la gratificación instantánea.</p>
+          <div class="est-revelacion">
+            <div class="rev-label">La Revelación</div>
+            <p>"Recuperar la alegría por la vida a través de la creación sin juicio."</p>
+          </div>
+        </div>
+        <div class="est-lateral">
+          <div class="est-meta">
+            <div class="est-meta-item">
+              <div class="emi-label">Enfoque</div>
+              <div class="emi-val">Terapia artística · Dibujo · Wabi-Sabi</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Escenario</div>
+              <div class="emi-val">Estudio privado · Ambiente íntimo</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Qué se libera</div>
+              <div class="emi-val">El ruido mental convertido en arte</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Tendencia 2026</div>
+              <div class="emi-val">Neuroestética Aplicada · Creatividad como ventaja competitiva</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estación 3 -->
+    <div class="estacion fade-up" style="transition-delay:.2s">
+      <div class="est-num-col"><div class="num">03</div></div>
+      <div class="est-body">
+        <div class="est-main">
+          <div class="est-icon">🏛️</div>
+          <div class="est-tag">Estación 3 · Recreación y Socialización Consciente</div>
+          <div class="est-name">Brújula Cultural</div>
+          <div class="est-enfoque">Curaduría de Sentido</div>
+          <p class="est-desc">Recorrido privado por un museo o galería de Bogotá, guiado por Nathalia bajo el lente del Borde Visible™. No vemos cuadros, vemos historias que resuenan con nuestro momento actual.</p>
+          <div class="est-revelacion">
+            <div class="rev-label">La Revelación</div>
+            <p>"Salir de la monotonía laboral para nutrir el intelecto y la chispa creativa."</p>
+          </div>
+        </div>
+        <div class="est-lateral">
+          <div class="est-meta">
+            <div class="est-meta-item">
+              <div class="emi-label">Enfoque</div>
+              <div class="emi-val">Curaduría artística · Metodología EBV™</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Escenario</div>
+              <div class="emi-val">Museo o galería privada · Bogotá</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Qué se libera</div>
+              <div class="emi-val">La erosión del asombro y el estancamiento intelectual</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estación 4 -->
+    <div class="estacion fade-up" style="transition-delay:.3s">
+      <div class="est-num-col"><div class="num">04</div></div>
+      <div class="est-body">
+        <div class="est-main">
+          <div class="est-icon">☕</div>
+          <div class="est-tag">Estación 4 · Bienestar Social y Espiritual</div>
+          <div class="est-name">Tinta y Café</div>
+          <div class="est-enfoque">Gobernanza del Ser</div>
+          <p class="est-desc">Círculo literario en un café de autor (Zona G o Quinta Camacho). Compartimos lecturas y escribimos nuestras propias "recetas para el alma" en el cuaderno didáctico. Disolver los límites del "yo" profesional para reconocerse en la red del micelio humano.</p>
+          <div class="est-revelacion">
+            <div class="rev-label">La Revelación</div>
+            <p>"Reconocerse en la red del micelio humano: nadie está solo en su peso."</p>
+          </div>
+        </div>
+        <div class="est-lateral">
+          <div class="est-meta">
+            <div class="est-meta-item">
+              <div class="emi-label">Enfoque</div>
+              <div class="emi-val">Círculo literario · Escritura terapéutica</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Escenario</div>
+              <div class="emi-val">Café de autor · Zona G / Quinta Camacho</div>
+            </div>
+            <div class="est-meta-item">
+              <div class="emi-label">Qué se libera</div>
+              <div class="emi-val">La soledad del líder · La identidad secuestrada</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOLORES ══ -->
+<section id="dolores">
+  <div class="container">
+    <div class="dolores-intro fade-up">
+      <div class="tag-dark">La gente no paga por aprender a pintar</div>
+      <h2>Paga por resolver<br/><em style="color:var(--oro-cl); font-style:italic;">esto</em></h2>
+      <p>Reconoce el verdadero dolor detrás de la decisión de venir a El Origen</p>
+    </div>
+    <div class="dolores-grid">
+      <div class="dolor-card fade-up">
+        <div class="dolor-num">01</div>
+        <div class="dolor-problema">Insomnio Laboral</div>
+        <div class="dolor-titulo">El Rito de Transición</div>
+        <p class="dolor-insight">"El insomnio no es falta de sueño, es exceso de <strong>presencia laboral</strong> en tu tiempo privado. Si no logras desconectar al llegar a casa, es porque tu sistema nervioso carece de un rito de transición. EL ORIGEN no es un pasatiempo; es el rito de descompresión que le enseña a tu cerebro que la jornada ha terminado."</p>
+      </div>
+      <div class="dolor-card fade-up" style="transition-delay:.1s">
+        <div class="dolor-num">02</div>
+        <div class="dolor-problema">Miedo a la Monotonía</div>
+        <div class="dolor-titulo">El Retorno del Asombro</div>
+        <p class="dolor-insight">"Tu carrera no se ha estancado por falta de habilidades, sino por <strong>erosión del asombro</strong>. Cuando dejas de ver posibilidades, tus decisiones se vuelven mecánicas. En EL ORIGEN, recuperamos la mirada del artista no para que pintes cuadros, sino para que vuelvas a ver soluciones donde otros solo ven bloqueos."</p>
+      </div>
+      <div class="dolor-card fade-up" style="transition-delay:.2s">
+        <div class="dolor-num">03</div>
+        <div class="dolor-problema">Carga del Cuidador</div>
+        <div class="dolor-titulo">La Red de Sostenimiento</div>
+        <p class="dolor-insight">"Tú eres el báculo de tu equipo y de tu familia, pero ¿quién sostiene al que sostiene a todos? El liderazgo solitario es el camino más corto al burnout. EL ORIGEN es un <strong>contenedor seguro</strong> diseñado para profesionales que, como tú, llevan el peso del mundo."</p>
+      </div>
+      <div class="dolor-card fade-up" style="transition-delay:.3s">
+        <div class="dolor-num">04</div>
+        <div class="dolor-problema">Paradoja Digital 2026</div>
+        <div class="dolor-titulo">El Lujo de lo Analógico</div>
+        <p class="dolor-insight">"La IA redacta y analiza en segundos, eliminando los espacios de pensamiento. Esto genera <strong>alerta cognitiva permanente</strong>. El 72% de mandos medios en Bogotá reportan agotamiento persistente. El estatus ya no es el último gadget — es tener el poder de desconectarse."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROMESAS ══ -->
+<section id="promesas">
+  <div class="container">
+    <div class="promesas-intro fade-up">
+      <div class="tag">Lo que te prometemos</div>
+      <h2 class="serif" style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:300; color:var(--texto); margin-bottom:10px;">Promesas delimitadas<br/>para quien decide venir</h2>
+    </div>
+    <div class="promesas-grid">
+      <div class="promesa-card fade-up">
+        <div class="promesa-para">Para el que no logra apagar la cabeza</div>
+        <p class="promesa-txt">"Te ayudamos a que tu casa vuelva a ser tuya. A que el domingo por la tarde deje de sentirse como el 'pre-lunes' y que, al cerrar los ojos, dejes de repasar correos. Te damos el rito para que el trabajo se quede en la oficina y tú puedas, por fin, <strong>estar presente donde realmente importa</strong>."</p>
+      </div>
+      <div class="promesa-card fade-up" style="transition-delay:.1s">
+        <div class="promesa-para">Para el que siente que es una máquina de entregar</div>
+        <p class="promesa-txt">"Te ayudamos a que dejes de sentirte como un 'bot' que solo produce resultados. Aquí recuperas el permiso de <strong>ser alguien más que un cargo</strong>. Te sacamos de la inercia para que vuelvas a crear algo con tus manos, no por productividad, sino por puro placer."</p>
+      </div>
+      <div class="promesa-card fade-up" style="transition-delay:.2s">
+        <div class="promesa-para">Para el que se siente "seco" por dentro</div>
+        <p class="promesa-txt">"Te ayudamos a recuperar la chispa que el cansancio crónico te robó. Si ya no te ríes y sientes que estás en 'modo automático', te damos el entorno seguro para que <strong>vuelvas a sentirte vivo</strong>. No es un descanso de fin de semana; es volver a encontrarle el gusto a las cosas."</p>
+      </div>
+      <div class="promesa-card fade-up" style="transition-delay:.3s">
+        <div class="promesa-para">Para el que siente que se le acabó el paisaje</div>
+        <p class="promesa-txt">"Te ayudamos a salir del estancamiento donde la rutina te encerró. Usamos la creatividad para que vuelvas a ver opciones donde hoy solo ves paredes, logrando que tu vida no gire solo en torno a lo que haces, sino a <strong>quién eres</strong>."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up"><div class="stat-num">72%</div><div class="stat-label">Mandos medios en Bogotá reportan agotamiento persistente (ANDI 2026)</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.1s"><div class="stat-num">10–12</div><div class="stat-label">Personas máximo por cohorte · Exclusividad garantizada</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.2s"><div class="stat-num">5h</div><div class="stat-label">De inmersión total cada sábado · Desconexión real</div></div>
+      <div class="stat-item fade-up" style="transition-delay:.3s"><div class="stat-num">4</div><div class="stat-label">Estaciones para habitarse · Un mes de restauración</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INVERSIÓN ══ -->
+<section id="inversion">
+  <div class="container">
+    <div class="inv-intro fade-up">
+      <div class="tag-dark">Inversión en tu Bienestar</div>
+      <h2>Una ruta diseñada para<br/>ser recorrida de principio a fin</h2>
+      <p>Restauración real de tu vitalidad, no un taller de un día.</p>
+    </div>
+    <div class="inv-grid">
+      <div class="inv-card featured fade-up">
+        <div class="inv-featured-tag">✦ Recomendado</div>
+        <div class="inv-type">Ruta Completa</div>
+        <div class="inv-name">Membresía<br/>4 Estaciones</div>
+        <div class="inv-price">$1'120.000</div>
+        <div class="inv-currency">COP · Por persona · Un mes</div>
+        <ul class="inv-includes">
+          <li>Las 4 estaciones (4 sábados)</li>
+          <li>Pasaporte de Bienestar físico</li>
+          <li>Diagnóstico Maslach personalizado</li>
+          <li>Seguimiento WhatsApp Premium</li>
+          <li>Sesión de cierre "Revelación y Cosecha"</li>
+          <li>Cuaderno didáctico</li>
+        </ul>
+      </div>
+      <div class="inv-card fade-up" style="transition-delay:.1s">
+        <div class="inv-type">Estación Individual</div>
+        <div class="inv-name">Sesión<br/>Drop-In</div>
+        <div class="inv-price">$320.000</div>
+        <div class="inv-currency">COP · Por sesión</div>
+        <ul class="inv-includes">
+          <li>Una estación a elegir</li>
+          <li>Sujeto a disponibilidad</li>
+          <li>Máximo 10–12 personas</li>
+        </ul>
+      </div>
+      <div class="inv-card fade-up" style="transition-delay:.2s">
+        <div class="inv-type">Horario</div>
+        <div class="inv-name">Sábados<br/>de 9AM a 2PM</div>
+        <div class="inv-price" style="font-size:1.8rem;">5h</div>
+        <div class="inv-currency">de inmersión total</div>
+        <ul class="inv-includes">
+          <li>Sábados 9:00 AM – 2:00 PM</li>
+          <li>Sin residuo del día laboral</li>
+          <li>Sin trancón bogotano</li>
+          <li>Tiempo para ti, no "una obligación más"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Aliados -->
+    <div class="inv-aliados fade-up">
+      <div class="al-label">🤝 Aliados</div>
+      <div class="al-tags">
+        <span class="al-tag">Comunidad Universidad EAN</span>
+        <span class="al-tag">Comunidad Casa Abierta</span>
+      </div>
+      <div>
+        <div class="al-precio">$952.000</div>
+        <div class="al-detalle">15% descuento · Ahorro de $168.000</div>
+      </div>
+    </div>
+
+    <!-- Pagos -->
+    <div class="inv-pagos fade-up">
+      <p>Aceptamos todos los métodos de pago</p>
+      <div class="pagos-pills">
+        <span class="pago-pill">Nequi</span>
+        <span class="pago-pill">Daviplata</span>
+        <span class="pago-pill">Bancolombia</span>
+        <span class="pago-pill">Tarjetas de crédito</span>
+        <span class="pago-pill">Links de pago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-left fade-left">
+        <div class="tag">Reserva tu Cupo</div>
+        <h2 class="serif" style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:300; color:var(--texto); margin-bottom:8px; line-height:1.2;">¿Estás listo para<br/>hacer el viaje más liviano?</h2>
+        <div class="divider"></div>
+        <p class="cl-sub">Solo 10 pasaportes disponibles por cohorte. Si algo de lo que leíste resonó contigo, el camino ya empezó.</p>
+        <div class="cupos-alert">
+          <div class="ca-icon">💎</div>
+          <p><strong>Exclusividad Radical:</strong> Grupos de máximo 10–12 personas por cohorte. Lo que pasa en la montaña, se queda en la montaña.</p>
+        </div>
+        <div class="horario-box">
+          <div class="hb-row">
+            <div class="hb-dot"></div>
+            <div class="hb-text"><strong>Sábados 9:00 AM – 2:00 PM</strong><span>5 horas de desconexión total · Sin tocar tu semana operativa</span></div>
+          </div>
+          <div class="hb-row">
+            <div class="hb-dot"></div>
+            <div class="hb-text"><strong>Bogotá · Serranía, galerías y cafés de autor</strong><span>Zona G, Quinta Camacho, Serranía · Tu ciudad como santuario</span></div>
+          </div>
+          <div class="hb-row">
+            <div class="hb-dot"></div>
+            <div class="hb-text"><strong>In-Company disponible</strong><span>Jornadas de 6PM–9PM para cierres integrativos de equipos</span></div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="https://wa.me/573217738039?text=Hola%20Simon%C3%A9%20%F0%9F%8C%BF%20Me%20interesa%20EL%20ORIGEN.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn-wa-form" style="max-width:280px; display:inline-flex;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbenos ahora
+          </a>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="contacto-form">
+          <div id="form-wrapper">
+            <div class="cf-title">Apertura del Expediente Vital</div>
+            <p class="cf-sub">No es "llenar un formulario" — es el primer paso de tu ruta</p>
+            <form onsubmit="handleSubmit(event)">
+              <div class="form-grid2">
+                <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required/></div>
+                <div class="form-group"><label>Empresa / Rol</label><input type="text" name="empresa" placeholder="Tu empresa o cargo" required/></div>
+              </div>
+              <div class="form-group"><label>WhatsApp / Teléfono</label><input type="text" name="telefono" placeholder="+57 300 000 0000" required/></div>
+              <div class="form-group">
+                <label>¿Con qué arquetipo te identificas?</label>
+                <select name="arquetipo">
+                  <option value="">Elige tu arquetipo</option>
+                  <option>El Sostenedor de Tensiones (Director/Gerente)</option>
+                  <option>El Arquitecto Solitario (Fundador/Consultor)</option>
+                  <option>El Navegante en Calma Chicha (Senior/Especialista)</option>
+                  <option>No estoy seguro/a aún</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>¿Qué es lo que más quieres soltar?</label>
+                <textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente qué peso llevas hoy..."></textarea>
+              </div>
+              <button type="submit" class="btn-form-oro">✦ Quiero reservar mi cupo</button>
+            </form>
+            <div class="form-divider"><span>o</span></div>
+            <a href="https://wa.me/573217738039?text=Hola%20Simon%C3%A9%20%F0%9F%8C%BF%20Me%20interesa%20EL%20ORIGEN.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn-wa-form">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Respuesta inmediata por WhatsApp
+            </a>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="fs-icon">🌿</div>
+            <h3>El viaje ha comenzado.</h3>
+            <p style="color:rgba(242,237,224,.65); font-size:.85rem; line-height:1.7;">Recibimos tu solicitud. Nathalia te contactará en menos de 24 horas para abrirte tu Expediente Vital y confirmar tu cupo.</p>
+            <br/>
+            <a href="https://wa.me/573217738039?text=Hola%20Simon%C3%A9%20%F0%9F%8C%BF%20Me%20interesa%20EL%20ORIGEN.%20%C2%BFPodemos%20hablar%3F" target="_blank" class="btn-wa-form" style="margin-top:16px;">¿Hablamos ahora? →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">SIMONÉ</div>
+        <div class="footer-origen">El Origen · Cuatro Estaciones</div>
+        <p class="footer-tagline">"Regresa a ti para decidir mejor."<br/>Arte · Naturaleza · Bienestar Regenerativo</p>
+        <div class="footer-social">
+          <a class="social-ico" href="https://www.facebook.com/experienciasimone" target="_blank">f</a>
+          <a class="social-ico" href="https://www.instagram.com/experienciasimone" target="_blank">📷</a>
+          <a class="social-ico" href="https://wa.me/573217738039" target="_blank">💬</a>
+          <a class="social-ico" href="https://www.linkedin.com/company/simone-arte-naturaleza" target="_blank">in</a>
+          <a class="social-ico" href="https://www.experienciasimone.com.co" target="_blank">🌐</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Las Estaciones</h4>
+        <ul>
+          <li><a href="#estaciones">01 · Yogarte</a></li>
+          <li><a href="#estaciones">02 · Khuyai</a></li>
+          <li><a href="#estaciones">03 · Brújula Cultural</a></li>
+          <li><a href="#estaciones">04 · Tinta y Café</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reservas</h4>
+        <ul>
+          <li><a href="https://wa.me/573217738039" target="_blank">💬 WhatsApp</a></li>
+          <li><a href="https://www.experienciasimone.com.co" target="_blank">🌐 experienciasimone.com.co</a></li>
+          <li><a href="https://www.instagram.com/experienciasimone" target="_blank">📷 @experienciasimone</a></li>
+          <li><a href="#contacto">📝 Reservar cupo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Simoné · Arte y Naturaleza. Todos los derechos reservados.</p>
+      <div class="footer-tm">EL BORDE VISIBLE™ es metodología registrada de Simoné</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ WA FLOTANTE ══ -->
+<div class="wa-float">
+  <div class="wa-tooltip">Reservar mi cupo 🌿</div>
+  <a href="https://wa.me/573217738039?text=Hola%20Simon%C3%A9%20%F0%9F%8C%BF%20Me%20interesa%20EL%20ORIGEN.%20%C2%BFPodemos%20hablar%3F" target="_blank">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ── PARTÍCULAS MICELIO ── */
+(function() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      position:absolute; border-radius:50%;
+      background:rgba(200,168,75,${Math.random()*.3+.1});
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      animation: particleFall ${Math.random()*15+8}s ${Math.random()*10}s linear infinite;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+/* ── ANIMATIONS ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => obs.observe(el));
+
+/* ── FORMULARIO ── */
+function handleSubmit(e) {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const nombre    = data.get('nombre')    || '';
+  const empresa   = data.get('empresa')   || '';
+  const telefono  = data.get('telefono')  || '';
+  const arquetipo = data.get('arquetipo') || '';
+  const mensaje   = data.get('mensaje')   || '';
+
+  const waText = encodeURIComponent(
+    `Hola Simoné 🌿 Quiero reservar mi cupo para EL ORIGEN.\n\nNombre: ${nombre}\nEmpresa/Rol: ${empresa}\nTeléfono: ${telefono}\nArquetipo: ${arquetipo}\nPeso que quiero soltar: ${mensaje}`
+  );
+
+  document.getElementById('form-wrapper').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+  setTimeout(() => window.open(`https://wa.me/573217738039?text=${waText}`, '_blank'), 1000);
+}
+
+/* ── HAMBURGER ── */
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    Object.assign(links.style, {
+      display: 'flex', flexDirection: 'column',
+      position: 'absolute', top: '60px',
+      left: '0', right: '0',
+      background: 'rgba(13,15,11,.98)',
+      padding: '20px 28px', gap: '18px',
+      backdropFilter: 'blur(16px)',
+      borderBottom: '1px solid rgba(200,168,75,.2)'
+    });
+  }
+}
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    if (window.innerWidth < 700) document.querySelector('.nav-links').style.display = 'none';
+  });
+});
+
+/* ── STYLE PARTÍCULAS ── */
+const styleEl = document.createElement('style');
+styleEl.textContent = `@keyframes particleFall { 0%{opacity:0;transform:translateY(-10px)} 10%{opacity:1} 90%{opacity:.3} 100%{opacity:0;transform:translateY(100vh)} }`;
+document.head.appendChild(styleEl);
+</script>
+</body>
+</html>
